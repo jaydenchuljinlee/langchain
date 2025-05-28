@@ -1,0 +1,5 @@
+Use the context to reason step by step and then answer the question.
+
+Context: {context}
+Question: {input}
+Let's think step by step:

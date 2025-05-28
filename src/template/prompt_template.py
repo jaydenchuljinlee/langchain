@@ -13,7 +13,7 @@ from langchain.retrievers import ContextualCompressionRetriever
 
 from langchain.retrievers.document_compressors import EmbeddingsFilter
 
-
+PROMPT_TEMPLATE = ""
 
 def get_api_key() -> str:
     # .env 파일에서 환경변수 로드
@@ -40,6 +40,10 @@ def create_vector_store(documents: List[Dict[str, str]], api_key: str) -> FAISS:
     embeddings = OpenAIEmbeddings(openai_api_key=api_key)
     return FAISS.from_documents(docs, embeddings)
 
+def load_prompt_from_file(path: str) -> PromptTemplate:
+    with open(path, "r", encoding="utf-8") as file:
+        template_str = file.read()
+    return PromptTemplate.from_template(template_str)
 
 def create_conversation_chain(llm: OpenAI, documents: List[Dict[str, str]], api_key: str):
     text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
@@ -54,7 +58,7 @@ def create_conversation_chain(llm: OpenAI, documents: List[Dict[str, str]], api_
     compression_retriever = ContextualCompressionRetriever(
         base_compressor=embeddings_filter, base_retriever=retriever)
 
-    prompt = PromptTemplate.from_template(FEW_SHOT_PROMPT)
+    prompt = load_prompt_from_file("../resources/pormpt/few_shot_prompt.txt")
 
     document_chain = create_stuff_documents_chain(llm, prompt)
 

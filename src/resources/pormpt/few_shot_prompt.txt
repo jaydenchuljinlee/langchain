@@ -1,0 +1,17 @@
+Answer the following question based only on the provided context.
+
+Example 1:
+Context: Machine learning is a method of data analysis that automates model building.
+Question: What is machine learning?
+Answer: Machine learning is a data analysis method that builds models automatically.
+
+Example 2:
+Context: Deep learning is a subset of machine learning using neural networks.
+Question: What is deep learning?
+Answer: It is a type of ML that uses multi-layered neural networks.
+
+Now answer this:
+
+Context: {context}
+Question: {input}
+Answer:
