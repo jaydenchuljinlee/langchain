@@ -1,18 +1,11 @@
 
 import os
 from dotenv import load_dotenv
-from langchain_openai import OpenAI, OpenAIEmbeddings
+from langchain_openai import OpenAI
 from langchain.chains import LLMChain
-from typing import List, Dict
 
 from langchain.prompts import PromptTemplate
-from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
-from langchain.retrievers import ContextualCompressionRetriever
-
-from langchain.retrievers.document_compressors import EmbeddingsFilter
 
 
 def get_api_key() -> str:
