@@ -4,9 +4,19 @@
 
 ## 💡 예제 목록
 
-### 1. 기본 대화형 체인 예제
-- **파일명**: `basic_conversation_chain.py`
+### 1. 기본 대화형 예제
+- **파일명**: `conversation_prompt.py`
 - **설명**: OpenAI를 사용하여 기본적인 대화형 체인을 구현한 예제입니다.
+- **사용된 기술**: `langchain`, `OpenAI`
+
+### 2. 구조화된 프롬프트 예제
+- **파일명**: `/template/structured_output_prompt.py`
+- **설명**: 구조화된 체인을 통해 프롬프트에 대한 응답을 정형화한 예제입니다.
+- **사용된 기술**: `langchain`, `OpenAI`
+
+### 3. 체이닝 프롬프트 예제
+- **파일명**: `/template/chaining_prompt.py`
+- **설명**: 구조화 + 블레이싱을 통해 프롬프트를 단계별로 제어하는 예제입니다.
 - **사용된 기술**: `langchain`, `OpenAI`
 
 ### 2. Pinecone 벡터 저장소를 사용한 문서 업로드 예제 <span style="color: orange;">(예제 작성중)</span>
