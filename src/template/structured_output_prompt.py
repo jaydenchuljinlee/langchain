@@ -30,7 +30,7 @@ def main():
         api_key = get_api_key()
         llm = create_llm(api_key)
 
-        prompt = load_prompt_from_file("../resources/pormpt/structured_prompt.txt")
+        prompt = load_prompt_from_file("../resources/pormpt/structured/structured_prompt.txt")
         chain = prompt | llm
 
         response = chain.invoke({"context": "서버 에러 발생, 에러 코드: 502"})

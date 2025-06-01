@@ -58,7 +58,7 @@ def create_conversation_chain(llm: OpenAI, documents: List[Dict[str, str]], api_
     compression_retriever = ContextualCompressionRetriever(
         base_compressor=embeddings_filter, base_retriever=retriever)
 
-    prompt = load_prompt_from_file("../resources/pormpt/few_shot_prompt.txt")
+    prompt = load_prompt_from_file("../resources/pormpt/basic/few_shot_prompt.txt")
 
     document_chain = create_stuff_documents_chain(llm, prompt)
 

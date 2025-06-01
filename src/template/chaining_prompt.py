@@ -21,17 +21,17 @@ def main():
         llm = ChatOpenAI(temperature=0.3, openai_api_key=api_key)
 
         # 1단계 프롬프트: 에러 판단 -> 구조화된 프롬프트
-        error_prompt = load_prompt_from_file("../resources/pormpt/chain_structured_prompt.txt")
+        error_prompt = load_prompt_from_file("../resources/pormpt/chaining/chain_structured_prompt.txt")
         chain1: RunnableSequence = error_prompt | llm
 
         # 2단계 프롬프트: 대응 설명 -> few shot 프롬프트
-        explanation_prompt = load_prompt_from_file("../resources/pormpt/chain_few_shot_prompt.txt")
+        explanation_prompt = load_prompt_from_file("../resources/pormpt/chaining/chain_few_shot_prompt.txt")
         ok_chain: RunnableSequence = explanation_prompt | llm
 
-        generated_prompt = load_prompt_from_file("../resources/pormpt/chain_generated_prompt.txt")
+        generated_prompt = load_prompt_from_file("../resources/pormpt/chaining/chain_generated_prompt.txt")
         generated_chain: RunnableSequence = generated_prompt | llm
 
-        ignored_prompt = load_prompt_from_file("../resources/pormpt/chain_ignored_prompt.txt")
+        ignored_prompt = load_prompt_from_file("../resources/pormpt/chaining/chain_ignored_prompt.txt")
         ignored_chain: RunnableSequence = ignored_prompt | llm
 
         # 테스트용 로그
