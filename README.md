@@ -19,12 +19,22 @@
 - **설명**: 구조화 + 블레이싱을 통해 프롬프트를 단계별로 제어하는 예제입니다.
 - **사용된 기술**: `langchain`, `OpenAI`
 
-### 2. Pinecone 벡터 저장소를 사용한 문서 업로드 예제 <span style="color: orange;">(예제 작성중)</span>
+### 4. FAISS 벡터 저장소를 사용한 문서 업로드 예제
 - **파일명**: `document_upload.py`
-- **설명**: Pinecone을 사용하여 문서를 임베딩하고 벡터 저장소에 업로드하는 예제입니다.
-- **사용된 기술**: `pinecone-client`, `OpenAIEmbeddings`, `langchain`
+- **설명**: FAISS를 사용하여 문서를 벡터 저장소에 업로드하는 예제입니다.
+- **사용된 기술**: `OpenAIEmbeddings`, `langchain`
 
-### 3. Redis와 Pinecone을 사용한 대화형 체인 예제 <span style="color: orange;">(예제 작성중)</span>
+### 5. FAISS 벡터 저장소를 사용한 임베딩 예제
+- **파일명**: `/template/embbeded_document_prompt.py`
+- **설명**: FAISS를 사용하여 문서를 임베딩하고 이를 기반으로 질의하는 예제입니다.
+- **사용된 기술**: `OpenAIEmbeddings`, `langchain`
+
+### 6. FAISS & 구조화 & 체이닝 프롬프트를 연계한 예제
+- **파일명**: `/template/chaining_embbeded_prompt.py`
+- **설명**: 이전에 학습한 구조화 + 체이닝 예제와 임베딩 문서를 연계한 예제입니다. 
+- **사용된 기술**: `OpenAIEmbeddings`, `langchain`
+
+### 6. Redis와 FAISS를 사용한 대화형 체인 예제 <span style="color: orange;">(예제 작성중)</span>
 - **파일명**: `app.py`
 - **설명**: Redis를 메모리 저장소로, Pinecone을 벡터 저장소로 사용하여 대화형 체인을 구현한 예제입니다.
 - **사용된 기술**: `Flask`, `pinecone-client`, `redis`, `langchain`, `OpenAI`
@@ -37,7 +47,7 @@
 ## 사용된 주요 기술
 
 - **OpenAI**: 자연어 처리 및 생성 모델을 제공하는 API.
-- **Pinecone**: 대규모 벡터 검색을 지원하는 클라우드 기반 벡터 데이터베이스.
+- **FAISS**: 대규모 벡터 검색을 지원하는 클라우드 기반 벡터 데이터베이스.
 - **Redis**: 빠른 읽기/쓰기를 제공하는 인메모리 데이터 구조 저장소.
 - **PostgreSQL**: 관계형 데이터베이스로, 복잡한 쿼리와 트랜잭션을 지원.
 - **Flask**: 파이썬 기반의 마이크로 웹 프레임워크로, 간단한 API 서버를 구축하는 데 사용.
