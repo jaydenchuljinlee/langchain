@@ -5,7 +5,6 @@ from typing import List, Dict
 
 from langchain.prompts import PromptTemplate
 from langchain_core.runnables import RunnableLambda
-from langchain_core.messages import AIMessage
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
