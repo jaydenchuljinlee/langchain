@@ -10,6 +10,19 @@ services:
     restart: always
     command: redis-server --appendonly yes
 
+  postgres:
+    image: postgres:15
+    container_name: llm-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: myuser         # ✅ 사용자명
+      POSTGRES_PASSWORD: mypassword # ✅ 비밀번호
+      POSTGRES_DB: mydatabase       # ✅ 생성할 DB 이름
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
 volumes:
   redis-data:
+  postgres-data:
 
