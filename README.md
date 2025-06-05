@@ -34,10 +34,10 @@
 - **설명**: 이전에 학습한 구조화 + 체이닝 예제와 임베딩 문서를 연계한 예제입니다. 
 - **사용된 기술**: `OpenAIEmbeddings`, `langchain`
 
-### 6. Redis와 FAISS를 사용한 대화형 체인 예제 <span style="color: orange;">(예제 작성중)</span>
-- **파일명**: `app.py`
-- **설명**: Redis를 메모리 저장소로, Pinecone을 벡터 저장소로 사용하여 대화형 체인을 구현한 예제입니다.
-- **사용된 기술**: `Flask`, `pinecone-client`, `redis`, `langchain`, `OpenAI`
+### 6. Redis와 FAISS를 사용한 대화형 체인 예제
+- **파일명**: `/template/caching_embbeded_prompt.py`
+- **설명**: Redis를 메모리 저장소로, FAISS를 벡터 저장소로 사용하여 대화형 체인을 구현한 예제입니다.
+- **사용된 기술**: `Flask`, `redis`, `langchain`, `OpenAI`
 
 ### 4. PostgreSQL과 Redis를 사용한 대화 기록 관리 예제 <span style="color: orange;">(예제 작성중)</span>
 - **파일명**: `app_with_postgresql.py`
