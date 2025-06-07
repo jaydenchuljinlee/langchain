@@ -22,7 +22,20 @@ services:
       POSTGRES_DB: mydatabase       # ✅ 생성할 DB 이름
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:6.0
+    container_name: llm-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: llm_chat
+      MONGO_INITDB_ROOT_USERNAME: myuser
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
 volumes:
   redis-data:
   postgres-data:
+  mongo-data:
 
