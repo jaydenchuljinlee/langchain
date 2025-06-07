@@ -55,11 +55,42 @@
 - **LangChain**: 대화형 체인을 구축하는 데 사용되는 라이브러리.
 - **psycopg2**: PostgreSQL 데이터베이스와 파이썬을 연결해주는 드라이버.
 
-## 설정 및 실행 방법
-
 ### 필수 설치 패키지
 
 다음 패키지들을 설치해야 합니다:
 
 ```sh
-pip install flask langchain openai pinecone-client redis psycopg2
+pip install -r requirements.txt
+```
+
+## 설정 파일 작성
+
+```sh
+# .env 파일 생성 (env 파일은 root 디렉토리 하위에 위치해야 합니다.)
+
+CHAT_GPT_API_KEY=OPEN_AI_KEY_작성
+
+# Redis
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+
+# PostgreSQL
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=mydatabase
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=mypassword
+
+# mongodb
+MONGO_URI=mongodb://myuser:mypassword@localhost:27017
+MONGO_DB=llm_chat
+MONGO_COLLECTION=chat_contents
+```
+
+## 실행 파일 위치
+- `/src/template` 디렉토리 아래 존재
+- 해당 파일 단독으로 실행 가능
+
+
+
